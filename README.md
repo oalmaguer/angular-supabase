@@ -18,29 +18,33 @@ This project is a boilerplate for Angular applications using Supabase for authen
 ## Setup
 
 1. Clone the repository:
+
    ```
    git clone https://github.com/yourusername/angular-supabase-auth-boilerplate.git
    cd angular-supabase-auth-boilerplate
    ```
 
 2. Install dependencies:
+
    ```
    npm install
    ```
 
 3. Set up your Supabase project:
+
    - Create a new project in Supabase
    - Go to Project Settings > API and copy your `URL` and `anon` public API key
    - Create a `src/environments/environment.ts` file with the following content:
      ```typescript
      export const environment = {
        production: false,
-       supabaseUrl: 'YOUR_SUPABASE_URL',
-       supabaseKey: 'YOUR_SUPABASE_ANON_KEY'
+       supabaseUrl: "YOUR_SUPABASE_URL",
+       supabaseKey: "YOUR_SUPABASE_ANON_KEY",
      };
      ```
 
 4. Start the development server:
+
    ```
    ng serve
    ```
@@ -71,10 +75,12 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## Buy me a coffee☕️
 
-buymeacoffee.com/mrtembo  
-If you find this project useful, consider buying me a coffee (CursorAi Subscription)
+If you find this project useful, consider buying me a coffee (Cursor Subscription)
+
+[buymeacoffee.com/mrtembo](https://buymeacoffee.com/mrtembo/)
 
 ## Contact
 
 almaguero95@gmail.com
+
 [www.linkedin.com/in/oliveralmaguer](https://www.linkedin.com/in/oliveralmaguer/)
