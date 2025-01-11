@@ -41,10 +41,4 @@ export class SupabaseService {
     return { data, error };
   }
 
-  async getUserByEmail(email: string) {
-     const { data, error } = await this.supabase.from('users').select('*').eq('email', email).single();
-     return { data, error };
-  }
-
-
 }

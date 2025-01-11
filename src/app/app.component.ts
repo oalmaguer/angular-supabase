@@ -7,10 +7,10 @@ import { ToastComponent } from './toast/toast.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AuthComponent, LoginComponent, ToastComponent],
+  imports: [RouterOutlet,  ToastComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'cursor';
+  title = 'Angular Supabase Auth';
 }

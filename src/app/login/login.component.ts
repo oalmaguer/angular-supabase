@@ -19,12 +19,15 @@ export class LoginComponent {
   constructor(private supabaseService: SupabaseService, private toastService: ToastService, private router: Router) {}
 
 
-  async ngOnInit() {
-    const user: any = await this.supabaseService.getCurrentUser();
-    if (user) {
-      this.router.navigate(['/landing']); 
-    }
+   ngOnInit() {
+    this.supabaseService.getCurrentUser()
+    .then((user) => {
+      if (user) {
+        this.router.navigate(['/landing']); 
+      }
+    })
   }
+  
   async login() {
     const { data, error } = await this.supabaseService.signIn(this.email, this.password);
     if (error) {
