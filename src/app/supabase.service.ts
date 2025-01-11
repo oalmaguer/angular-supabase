@@ -40,4 +40,11 @@ export class SupabaseService {
     const { data, error } = await this.supabase.auth.resetPasswordForEmail(email);
     return { data, error };
   }
+
+  async getUserByEmail(email: string) {
+     const { data, error } = await this.supabase.from('users').select('*').eq('email', email).single();
+     return { data, error };
+  }
+
+
 }

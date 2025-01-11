@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SupabaseService } from '../supabase.service';
 import { ToastService } from '../toast.service';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,8 +16,15 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
 
-  constructor(private supabaseService: SupabaseService, private toastService: ToastService) {}
+  constructor(private supabaseService: SupabaseService, private toastService: ToastService, private router: Router) {}
 
+
+  async ngOnInit() {
+    const user: any = await this.supabaseService.getCurrentUser();
+    if (user) {
+      this.router.navigate(['/landing']); 
+    }
+  }
   async login() {
     const { data, error } = await this.supabaseService.signIn(this.email, this.password);
     if (error) {
@@ -26,6 +33,7 @@ export class LoginComponent {
 
     } else {
       console.log('Logged in successfully:', data);
+      this.router.navigate(['/landing']);
       this.toastService.showToast('Logged in successfully', 'success');
 
     }

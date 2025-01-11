@@ -31,13 +31,4 @@ export class AuthComponent {
     }
   }
 
-
-  // async signIn(email: string, password: string) {
-  //   const { data, error } = await this.supabaseService.signInWithGoogle(e);
-  //   if (error) {
-  //     console.error('Error signing in:', error.message);
-  //   } else {
-  //     console.log('Signed in successfully:', data);
-  //   }
-  // }
 }
